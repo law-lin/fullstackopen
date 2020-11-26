@@ -1,23 +1,17 @@
 const initialState = null;
 
-export const voteAnecdoteNotif = (content) => {
-  return {
-    type: 'SET_NOTIFICATION',
-    notification: `you voted '${content}'`,
-  };
-};
-
-export const createAnecdoteNotif = (content) => {
-  return {
-    type: 'SET_NOTIFICATION',
-    notification: `you created '${content}'`,
-  };
-};
-
-export const removeNotification = () => {
-  return {
-    type: 'REMOVE_NOTIFICATION',
-    notification: null,
+export const setNotification = (notification, seconds) => {
+  return async (dispatch) => {
+    setTimeout(() => {
+      dispatch({
+        type: 'REMOVE_NOTIFICATION',
+        notification: null,
+      });
+    }, 10000);
+    dispatch({
+      type: 'SET_NOTIFICATION',
+      notification,
+    });
   };
 };
 
