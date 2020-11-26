@@ -36,7 +36,7 @@ if (process.argv.length === 3) {
   });
 } // Save people
 else if (process.argv.length === 5) {
-  person.save().then((res) => {
+  person.save().then(() => {
     console.log(`added ${name} number ${number} to phonebook`);
     mongoose.connection.close();
   });

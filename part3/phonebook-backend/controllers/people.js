@@ -52,7 +52,7 @@ peopleRouter.post('/', (req, res, next) => {
     .catch((err) => next(err));
 });
 
-peopleRouter.put('/:id', (req, res) => {
+peopleRouter.put('/:id', (req, res, next) => {
   const body = req.body;
 
   const person = {
